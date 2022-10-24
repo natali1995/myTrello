@@ -1,0 +1,6 @@
+*.sass
+.idea
+jquery-ui.js
+jquery-ui.min.js
+jquery.min.js
+jquery-ui.min.css

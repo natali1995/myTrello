@@ -1,0 +1,645 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  background-color: #009ef8;
+}
+
+h2 {
+  font-family: "Girassol", cursive;
+  font-size: 40px;
+  font-weight: normal;
+}
+
+h1 {
+  font-family: "Lobster Two", cursive;
+  font-size: 48px;
+  font-weight: normal;
+  color: #0500fb;
+}
+
+#dog {
+  width: 55%;
+  justify-self: end;
+}
+
+#account {
+  height: 110px;
+  width: 110px;
+  background-image: url("img/member.png");
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+}
+
+#header {
+  padding-top: 5vh;
+  height: 15vh;
+  background-color: #8cd3fb;
+  display: inline-grid;
+  grid-template-areas: "board" "logo" "actions" "accountPhoto";
+  grid-template-columns: 2fr 2fr 1fr 1fr;
+}
+
+.board {
+  margin-left: 10%;
+  padding-top: 3vh;
+}
+
+.logo {
+  display: inline-grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.logo h1 {
+  padding-top: 2vh;
+  justify-self: start;
+}
+
+.actions {
+  padding-top: 3vh;
+  justify-self: center;
+}
+
+/* Main content */
+button {
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.buttonList {
+  display: inline-grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.fa-plus-circle {
+  font-size: 40px;
+}
+
+.lists {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 1%;
+  margin-top: 5vh;
+  padding-bottom: 5vh;
+  margin-left: 3%;
+  margin-right: 3%;
+  overflow-x: scroll;
+}
+
+.card, .addCard {
+  width: 300px;
+  height: 300px;
+  background-size: cover;
+  background-image: url("img/block.png");
+  cursor: pointer;
+}
+
+.list, h4 {
+  font-family: "Lora", serif;
+  font-size: 30px;
+  text-align: center;
+}
+
+.card p {
+  font-family: "EB Garamond", serif;
+  font-size: 20px;
+}
+
+.fa-pencil-alt {
+  font-size: 20px;
+}
+
+.buttonList {
+  background-color: rgba(140, 211, 251, 0.57);
+  border-radius: 15px;
+  padding: 12px 71px 12px 48px;
+  margin-left: 40%;
+  margin-top: 5vh;
+}
+
+.fa-plus-circle, h4 {
+  opacity: 0.57;
+}
+
+.list {
+  background-color: #8cd3fb;
+  border-radius: 10px;
+  padding: 5px 20px 5px 20px;
+  position: relative;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+
+.card {
+  display: grid;
+  grid-template-areas: "delete delete edit" "description description description" "add cancel cancel";
+  grid-template-columns: 33% 33% 33%;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+.card p {
+  grid-area: description;
+  justify-self: center;
+  padding-top: 3vh;
+  text-align: center;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.cardEdit {
+  grid-area: edit;
+  margin-top: 5vh;
+}
+
+.description {
+  grid-area: description;
+  font-family: "EB Garamond", serif;
+  font-size: 17px;
+  margin-left: 25px;
+  opacity: 0.8;
+  width: 180px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.fa-plus-square {
+  font-size: 20px;
+}
+
+.cardAdd, .cardAddTrello {
+  grid-area: add;
+  justify-self: center;
+}
+
+.cardCancel1, .cardCancel2 {
+  grid-area: cancel;
+  font-family: "EB Garamond", serif;
+  font-size: 20px;
+  justify-self: end;
+  margin-right: 15%;
+}
+
+.fa-trash {
+  font-size: 20px;
+}
+
+.cardDelete {
+  grid-area: delete;
+  justify-self: start;
+  padding-top: 5vh;
+  padding-left: 20%;
+}
+
+.ui-widget-content {
+  background: white;
+  border: 1px solid #0500fb;
+}
+
+.ui-widget-header {
+  background: #8cd3fb;
+  border: 1px solid #0500fb;
+  color: #0500fb;
+  font-family: "Lora", serif;
+  font-size: 22px;
+}
+
+.ui-widget-header .fa-times {
+  font-size: 20px;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+  background: rgba(140, 211, 251, 0.57);
+  border: 0;
+  color: #0500fb;
+}
+
+.ui-dialog-buttonset button {
+  border-radius: 5px;
+  padding: 5px 10px 5px 10px;
+  margin-left: 10px;
+  background: rgba(140, 211, 251, 0.57);
+  color: #0500fb;
+  font-family: "Lobster Two", cursive;
+}
+
+.dialogs {
+  display: grid;
+  grid-template-areas: "descriptionsDialog actionsDialog" "dialogActions dialogActions" "commentsDialog commentsDialog";
+  grid-template-columns: 1fr 1fr;
+  column-gap: 5%;
+}
+
+.descriptionsDialog {
+  grid-area: descriptionsDialog;
+}
+
+.descriptionsDialog textarea {
+  margin-top: 20px;
+  padding: 20px 20px 20px 20px;
+  font-family: "EB Garamond", serif;
+  font-size: 20px;
+}
+
+.descriptionsDialog button {
+  margin-top: 10px;
+  border: 2px solid #0500fb;
+  border-radius: 5px;
+  padding: 5px 10px 5px 10px;
+  margin-left: 10px;
+  background: rgba(140, 211, 251, 0.57);
+  color: #0500fb;
+  font-family: "Lobster Two", cursive;
+  font-size: 23px;
+}
+
+.comments {
+  margin-top: 30px;
+}
+
+.commentsDialog {
+  grid-area: commentsDialog;
+  margin-top: 70px;
+}
+
+.actionsDialog {
+  grid-area: actionsDialog;
+  width: 150px;
+  height: 100px;
+  margin-top: 60px;
+}
+
+.actionsDialog button {
+  margin-top: 15px;
+  font-family: "Lora", serif;
+  color: #0500fb;
+  background: rgba(140, 211, 251, 0.57);
+  border-radius: 5px;
+  padding: 10px 10px 10px 10px;
+  width: 150px;
+}
+
+.descriptionsDialog h4 {
+  color: #0500fb;
+}
+
+.descriptionFull {
+  width: 420px;
+  min-height: 200px;
+  font-family: "EB Garamond", serif;
+  font-size: 20px;
+  margin-top: 20px;
+  padding: 20px 20px 20px 20px;
+  border: 2px solid #0500fb;
+  border-radius: 5px;
+  background: rgba(140, 211, 251, 0.2);
+}
+
+.commentsDialog h4 {
+  color: #0500fb;
+}
+
+.commentsDialog button {
+  font-family: "Lobster Two", cursive;
+  background: #8cd3fb;
+  border-radius: 5px;
+  color: #0500fb;
+  font-size: 22px;
+  padding: 10px 10px 10px 10px;
+}
+
+.commentsDiv {
+  margin-top: 20px;
+}
+
+.definiteComment {
+  display: grid;
+  grid-template-areas: "commentDesscription commentDesscription" "save cancel";
+  grid-template-columns: 1fr 1fr;
+}
+
+.commentsDiv textarea {
+  grid-area: commentDescription;
+  margin-top: 20px;
+  margin-right: 20px;
+  padding: 20px 20px 20px 20px;
+  font-family: "EB Garamond", serif;
+  font-size: 20px;
+}
+
+.commentsDiv button {
+  margin-top: 10px;
+  border: 2px solid #0500fb;
+  border-radius: 5px;
+  padding: 5px 10px 5px 10px;
+  margin-left: 10px;
+  background: rgba(140, 211, 251, 0.57);
+  color: #0500fb;
+  font-family: "Lobster Two", cursive;
+  font-size: 23px;
+}
+
+.commentEdit, .saveComments {
+  grid-area: save;
+}
+
+.deleteComment, .cancelComment {
+  grid-area: cancel;
+}
+
+.commentsFull {
+  grid-area: commentDescription;
+  width: 420px;
+  min-height: 30px;
+  font-family: "EB Garamond", serif;
+  font-size: 20px;
+  margin-top: 20px;
+  margin-right: 20px;
+  padding: 20px 20px 20px 20px;
+  border: 2px solid #0500fb;
+  border-radius: 5px;
+  background: rgba(140, 211, 251, 0.2);
+}
+
+.label {
+  width: 200px;
+  height: 30px;
+  border-radius: 15px;
+  margin-top: 10px;
+}
+
+.label635294a5596756259c5aebb4 {
+  background: yellow;
+}
+
+.label635294a5596756259c5aebbd {
+  background: blue;
+}
+
+.label635294a5596756259c5aebb7 {
+  background: orange;
+}
+
+.label635294a5596756259c5aebb5 {
+  background: green;
+}
+
+.label635294a5596756259c5aebbc {
+  background: purple;
+}
+
+.label635294a5596756259c5aebb9 {
+  background: red;
+}
+
+.labelNew {
+  width: 70px;
+}
+
+.differentActions {
+  grid-area: dialogActions;
+}
+
+.labelSection {
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  column-gap: 10px;
+}
+
+.differentActions h4 {
+  font-size: 25px;
+}
+
+.dialogCalendar p {
+  margin-top: 15px;
+  font-family: "Lobster Two", cursive;
+  font-size: 25px;
+}
+
+.ui-state-active {
+  background: #0500fb !important;
+  color: #8cd3fb !important;
+}
+
+.dialogCalendar input {
+  font-size: 20px;
+  font-family: "EB Garamond", serif;
+}
+
+.ui-datepicker-trigger {
+  margin-top: 20px;
+  margin-left: 5px;
+  width: 100px;
+  height: 100px;
+  position: relative;
+  top: 3px;
+  cursor: pointer;
+}
+
+.calendarSection {
+  width: 100px;
+  font-family: "EB Garamond", serif;
+  padding: 10px;
+  color: black;
+}
+
+.inputChecklistHeading {
+  font-family: "Lobster Two", cursive;
+  font-size: 23px;
+  margin-top: 15px;
+}
+
+.inputChecklist, .checklistItemChanged {
+  font-family: "EB Garamond", serif !important;
+  font-size: 22px !important;
+  margin-top: 10px;
+  width: 240px;
+  height: 30px;
+  border: 3px solid #0500fb;
+  padding: 5px 10px 5px 10px;
+}
+
+.checklistItemChanged {
+  margin-top: 50px;
+}
+
+.checklistItem {
+  font-family: "EB Garamond", serif;
+  font-size: 25px;
+  margin-top: 50px;
+}
+
+.checklist button {
+  border: 2px solid #0500fb;
+  border-radius: 5px;
+  padding: 5px 10px 5px 10px;
+  background: rgba(140, 211, 251, 0.57);
+  color: #0500fb;
+  font-family: "Lobster Two", cursive;
+  font-size: 23px;
+  width: 100px;
+  margin-top: 10px;
+}
+
+.checklist {
+  display: grid;
+  grid-template-areas: "description description" "editSave deleteCancel";
+  grid-template-columns: 1fr 4fr;
+}
+
+.checklistItem, .checklistItemChanged {
+  grid-area: description;
+}
+
+.checklistItemEdit, .checklistItemSave {
+  grid-area: editSave;
+}
+
+.checklistItemDelete, .checklistItemCancel {
+  grid-area: deleteCancel;
+}
+
+.addCheckItem i {
+  font-size: 23px;
+}
+
+.addCheckItem {
+  border: 2px solid #0500fb;
+  border-radius: 5px;
+  padding: 5px 10px 5px 10px;
+  background: rgba(140, 211, 251, 0.57);
+  color: #0500fb;
+  font-family: "Lobster Two", cursive !important;
+  font-size: 23px !important;
+  width: 200px;
+  margin-top: 20px;
+}
+
+.checkItem {
+  margin-top: 15px;
+  display: grid;
+  grid-template-areas: "itemDescription itemDescription" "itemEditItemSave itemDeleteItemCancel";
+  grid-template-columns: 1fr 7fr;
+}
+
+.checkItem button {
+  border: 2px solid #0500fb;
+  border-radius: 5px;
+  padding: 3px 5px 3px 5px;
+  background: rgba(140, 211, 251, 0.57);
+  color: #0500fb;
+  font-family: "Lobster Two", cursive;
+  font-size: 20px;
+  width: 60px;
+  margin-top: 10px;
+}
+
+.checkItemTask {
+  font-family: "EB Garamond", serif;
+  font-size: 20px;
+}
+
+.checkItemTask, .checkItemTaskInput {
+  grid-area: itemDescription;
+}
+
+.buttonCheckItemEdit, .buttonCheckItemSave {
+  grid-area: itemEditItemSave;
+}
+
+.buttonCheckItemDelete, .buttonCheckItemCancel, .buttonCheckItemCancel2 {
+  grid-area: itemDeleteItemCancel;
+}
+
+.checkboxItem {
+  width: 15px;
+  height: 15px;
+}
+
+.checkItemTaskInput {
+  font-family: "EB Garamond", serif !important;
+  font-size: 15px;
+  margin-top: 10px;
+  width: 240px;
+  height: 25px;
+  border: 3px solid #0500fb;
+  padding: 3px 3px 3px 5px;
+}
+
+.inputAttachment {
+  font-family: "EB Garamond", serif !important;
+  font-size: 22px !important;
+  margin-top: 30px;
+  width: 240px;
+  height: 30px;
+  border: 3px solid #0500fb;
+  padding: 5px 10px 5px 10px;
+}
+
+.fieldAttachments {
+  margin-top: 20px;
+}
+
+.attachmentSection {
+  margin-top: 30px;
+}
+
+.attachment {
+  margin-top: 20px;
+  display: grid;
+  grid-template-areas: "imageAttachment nameAttachment nameAttachment" "imageAttachment editSaveAttachment deleteCancelAttachment";
+  grid-template-columns: 1fr 2fr 6fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.attachment a {
+  grid-area: imageAttachment;
+}
+
+.attachmentDescription, .newInputAttachment {
+  grid-area: nameAttachment;
+  padding-left: 40px;
+  padding-top: 30px;
+}
+
+.attachmentEdit, .attachmentSave {
+  grid-area: editSaveAttachment;
+  justify-self: center;
+}
+
+.attachmentDelete, .attachmentCancel {
+  grid-area: deleteCancelAttachment;
+  justify-self: start;
+}
+
+.attachment button {
+  border: 2px solid #0500fb;
+  border-radius: 5px;
+  padding: 3px 5px 3px 5px;
+  background: rgba(140, 211, 251, 0.57);
+  color: #0500fb;
+  font-family: "Lobster Two", cursive;
+  font-size: 20px;
+  width: 70px;
+  margin-top: 10px;
+}
+
+.newInputAttachment {
+  font-family: "EB Garamond", serif !important;
+  font-size: 20px !important;
+  margin-top: 10px;
+  margin-left: 35px;
+  width: 400px;
+  height: 30px;
+  border: 3px solid #0500fb;
+  padding: 5px 10px 5px 10px;
+}
+
+/*# sourceMappingURL=style.css.map */
